@@ -1,0 +1,297 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width,initial-scale=1"
+  >
+
+  <meta
+    name="description"
+    content="Unforgettable Memories — a living timeline for friends."
+  >
+
+  <title>
+    Unforgettable Memories
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="/styles.css"
+  >
+
+</head>
+
+<body>
+
+<div class="noise"></div>
+
+<header>
+
+  <a
+    class="logo"
+    href="#"
+  >
+    <span>✦</span>
+    Unforgettable Memories
+  </a>
+
+  <nav>
+
+    <a href="#timeline">
+      Timeline
+    </a>
+
+    <button id="submitBtn">
+      Add a Memory
+    </button>
+
+    <button id="adminBtn">
+      Keeper
+    </button>
+
+  </nav>
+
+</header>
+
+
+<main>
+
+<section class="hero">
+
+  <div class="stamp">
+    OUR LITTLE ARCHIVE
+  </div>
+
+  <h1>
+    Some moments<br>
+    deserve to <i>stay.</i>
+  </h1>
+
+  <p>
+    A cinematic timeline for the people,
+    places, laughter and little things
+    we never want to forget.
+  </p>
+
+  <a
+    class="scroll"
+    href="#timeline"
+  >
+    Explore the years ↓
+  </a>
+
+  <div class="film film1"></div>
+
+  <div class="film film2"></div>
+
+</section>
+
+
+<section
+  id="timeline"
+  class="timeline-section"
+>
+
+  <div class="section-title">
+
+    <span>
+      THE ARCHIVE
+    </span>
+
+    <h2>
+      Every year has a story.
+    </h2>
+
+    <p id="summary"></p>
+
+  </div>
+
+  <div id="timelineRoot"></div>
+
+</section>
+
+</main>
+
+
+<!-- SUBMIT MEMORY -->
+
+<dialog id="submitDialog">
+
+<form
+  id="submitForm"
+  class="modal"
+>
+
+<button
+  type="button"
+  class="x"
+  data-close
+>
+  ×
+</button>
+
+<span class="kicker">
+  NEW MEMORY
+</span>
+
+<h3>
+  Make it unforgettable.
+</h3>
+
+
+<label>
+
+  Custom title
+
+  <input
+    name="title"
+    maxlength="120"
+    required
+    placeholder="The day we laughed for hours"
+  >
+
+</label>
+
+
+<label>
+
+  Names
+
+  <input
+    name="names"
+    maxlength="300"
+    required
+    placeholder="Chandu, Ravi, Priya..."
+  >
+
+</label>
+
+
+<label>
+
+  Date
+
+  <input
+    name="date"
+    type="date"
+    required
+  >
+
+</label>
+
+
+<label>
+
+  Story
+  <small>optional</small>
+
+  <textarea
+    name="story"
+    maxlength="2500"
+    placeholder="What should future-you remember?"
+  ></textarea>
+
+</label>
+
+
+<label>
+
+  Photos / videos
+
+  <input
+    name="files"
+    type="file"
+    accept="image/*,video/mp4,video/webm"
+    multiple
+    required
+  >
+
+</label>
+
+
+<p class="hint">
+  Your submission stays hidden
+  until the Keeper approves it.
+</p>
+
+
+<p
+  id="submitError"
+  class="error"
+></p>
+
+
+<button
+  class="dark"
+  type="submit"
+>
+  Send to the Keeper ✦
+</button>
+
+</form>
+
+</dialog>
+
+
+<!-- ADMIN -->
+
+<dialog id="adminDialog">
+
+<div class="modal">
+
+<button
+  class="x"
+  data-close
+>
+  ×
+</button>
+
+<span class="kicker">
+  KEEPER VAULT
+</span>
+
+<h3>
+  Approve the memories.
+</h3>
+
+<div id="adminArea"></div>
+
+</div>
+
+</dialog>
+
+
+<!-- IMAGE VIEWER -->
+
+<dialog id="lightbox">
+
+<div class="lightbox">
+
+<button
+  class="x"
+  data-close
+>
+  ×
+</button>
+
+<div id="lightboxContent"></div>
+
+</div>
+
+</dialog>
+
+
+<script
+  src="/app.js"
+  defer
+></script>
+
+</body>
+
+</html>
